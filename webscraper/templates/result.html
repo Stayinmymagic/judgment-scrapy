@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <meta charset="UTF-8">
+        <title>judgment results</title>
+    </head>
+    <table cellpadding="8" border="1" margin-left="auto" margin-right="auto">
+        <thead>
+            <tr>
+                <th bgcolor="#c0c0c0" width="10%" style="color:black">姓名</th>
+                <th bgcolor="#c0c0c0" width="10%" style="color:black">法院</th>
+                <th bgcolor="#c0c0c0" width="10%" style="color:black">類型</th>
+                <th bgcolor="#c0c0c0" width="10%" style="color:black">時間</th>
+                <th bgcolor="#c0c0c0" width="10%" style="color:black">金額</th>
+                <th bgcolor="#c0c0c0" width="20%" style="color:black">公司</th>
+                <th bgcolor="#c0c0c0" width="10%" style="color:black">比對父母</th>
+                <th bgcolor="#c0c0c0" width="10%" style="color:black">比對地址</th>
+                <th bgcolor="#c0c0c0" width="15%" style="color:black">連結</th>
+            </tr>
+        <thead>
+    
+        {% for i in results%} 
+        <tr align="center">
+            <td>{{i.name}}</td>
+            <td>{{i.court}}</td>
+            <td>{{i.crime_type}}</td>
+            <td>{{i.event_time | date:"Y/m/d"}}</td>
+            <td>{{i.amount}}</td>
+            <td>{{i.company}}</td>
+            <td>{{i.map_family}}</td>
+            <td>{{i.map_address}}</td>
+            <td><a href= {{ i.link }}>裁決書連結</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+    
+    
+</html>
